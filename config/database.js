@@ -4,7 +4,8 @@ const path = require("path");
 module.exports = ({ env }) => {
   const client = env("DATABASE_CLIENT", "postgres");
 
-  const caPath = path.join(__dirname, "../config/prod-ca-2021.crt"); // path to your cert
+  // Use Render secret file path
+  const caPath = "/etc/secrets/prod-ca-2021.crt";
 
   const connections = {
     postgres: {
