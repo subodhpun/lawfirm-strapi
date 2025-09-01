@@ -1,0 +1,44 @@
+{
+  "name": "lawfirm-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.23.1",
+    "@strapi/plugin-users-permissions": "5.23.1",
+    "@strapi/provider-upload-cloudinary": "^5.23.1",
+    "@strapi/strapi": "^5.23.1",
+    "@supabase/supabase-js": "^2.56.1",
+    "dotenv": "^17.2.1",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "strapi-provider-upload-supabase": "^1.0.0",
+    "strapi-supabase-file-upload": "^1.0.0-beta.7",
+    "styled-components": "^6.0.0",
+    "supabase": "^2.39.2"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "a803b9ad-87c0-49c8-81e9-72b6eaf2184f",
+    "installId": "2632b10b1848f59b330dfe2dbe9984b183374acd50b0ccfdd3d305b85d21d5e2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
+  }
+}
