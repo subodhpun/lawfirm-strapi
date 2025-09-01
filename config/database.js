@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
 
-  // Path to your certificate file
+  // Path to your certificate file (optional, for custom CA)
   const certPath = path.resolve(__dirname, '..', 'prod-ca-2021.crt');
 
   const connections = {
@@ -35,7 +35,9 @@ module.exports = ({ env }) => {
         user: env('DATABASE_USERNAME', 'strapi'),
         password: env('DATABASE_PASSWORD', 'strapi'),
         ssl: env.bool('DATABASE_SSL', false) && {
-          rejectUnauthorized: true,
+          // Ignore self-signed certs for Supabase
+          rejectUnauthorized: false,
+          // Optional: provide CA if you have it
           ca: fs.existsSync(certPath) ? fs.readFileSync(certPath).toString() : undefined,
         },
         schema: env('DATABASE_SCHEMA', 'public'),
